@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SanityDust | Stabilizing Society’s Sanity</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        
+        :root {
+            --tw-color-primary: #00d4ff;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .heading-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .hero-bg {
+            background: linear-gradient(180deg, #0a0a2a 0%, #1a1a3a 100%);
+        }
+        
+        .nav-link {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .nav-link:hover {
+            color: #00d4ff;
+            transform: translateY(-1px);
+        }
+        
+        .section-header {
+            position: relative;
+        }
+        
+        .section-header::after {
+            content: '';
+            position: absolute;
+            width: 64px;
+            height: 3px;
+            background: #00d4ff;
+            bottom: -8px;
+            left: 0;
+        }
+        
+        .particle {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-[#05050f] text-white">
+    <!-- NAVBAR -->
+    <nav class="border-b border-white/10 bg-[#05050f]/80 backdrop-blur-lg sticky top-0 z-50">
+        <div class="max-w-screen-2xl mx-auto px-8 py-6 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center gap-x-3">
+                <div class="w-9 h-9 bg-[#00d4ff] rounded-2xl flex items-center justify-center text-[#05050f] text-2xl rotate-12 particle">
+                    <i class="fa-solid fa-spray-can"></i>
+                </div>
+                <div>
+                    <span class="heading-font text-3xl tracking-tighter">SanityDust</span>
+                </div>
+            </div>
+            
+            <!-- Tagline -->
+            <div class="hidden md:flex items-center text-[#00d4ff] text-sm font-medium tracking-[2px] uppercase">
+                STABILIZING SOCIETY’S SANITY
+            </div>
+            
+            <!-- Menu -->
+            <div class="flex items-center gap-x-8 text-sm font-medium">
+                <a href="#technology" onclick="document.getElementById('technology').scrollIntoView({ behavior: 'smooth' })" class="nav-link">THE TECHNOLOGY</a>
+                <a href="#approach" onclick="document.getElementById('approach').scrollIntoView({ behavior: 'smooth' })" class="nav-link">OUR APPROACH</a>
+                <a href="#spray" onclick="document.getElementById('spray').scrollIntoView({ behavior: 'smooth' })" class="nav-link">THE ANTI-WOKE SPRAY</a>
+                <a href="#principles" onclick="document.getElementById('principles').scrollIntoView({ behavior: 'smooth' })" class="nav-link">PRINCIPLES</a>
+                <a href="#faq" onclick="document.getElementById('faq').scrollIntoView({ behavior: 'smooth' })" class="nav-link">FAQ</a>
+                
+                <div class="flex items-center gap-x-3">
+                    <a href="mailto:info@sanitydustsolutions.com" 
+                       class="px-6 py-3 bg-white/10 hover:bg-[#00d4ff] hover:text-[#05050f] rounded-3xl text-sm font-semibold transition-colors flex items-center gap-x-2">
+                        <i class="fa-solid fa-envelope"></i>
+                        CONTACT
+                    </a>
+                    <a href="#" onclick="fakeBuy()" 
+                       class="px-8 py-3 bg-[#00d4ff] hover:bg-white text-[#05050f] rounded-3xl text-sm font-semibold transition-colors flex items-center gap-x-2">
+                        <i class="fa-solid fa-spray-can"></i>
+                        GET THE SPRAY
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Mobile menu button -->
+            <button onclick="toggleMobileMenu()" class="md:hidden text-2xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="hidden md:hidden border-t border-white/10 px-8 py-6 bg-[#05050f]">
+            <div class="flex flex-col gap-y-6 text-sm font-medium">
+                <a href="#technology" onclick="toggleMobileMenu()" class="nav-link">THE TECHNOLOGY</a>
+                <a href="#approach" onclick="toggleMobileMenu()" class="nav-link">OUR APPROACH</a>
+                <a href="#spray" onclick="toggleMobileMenu()" class="nav-link">THE ANTI-WOKE SPRAY</a>
+                <a href="#principles" onclick="toggleMobileMenu()" class="nav-link">PRINCIPLES</a>
+                <a href="#faq" onclick="toggleMobileMenu()" class="nav-link">FAQ</a>
+                <div class="pt-6 border-t border-white/10 flex flex-col gap-y-4">
+                    <a href="mailto:info@sanitydustsolutions.com" class="flex items-center justify-center gap-x-3 text-center py-4 bg-white/10 rounded-3xl">Contact Us</a>
+                    <a onclick="fakeBuy()" class="flex items-center justify-center gap-x-3 text-center py-4 bg-[#00d4ff] text-[#05050f] rounded-3xl">GET THE ANTI-WOKE SPRAY</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero-bg py-24">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="grid md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-7">
+                    <div class="inline-flex items-center gap-x-2 bg-white/10 text-[#00d4ff] text-xs font-medium tracking-widest px-5 py-2 rounded-3xl mb-6">
+                        <div class="w-2 h-2 bg-[#00d4ff] rounded-full animate-pulse"></div>
+                        2026 CRISIS UPDATE
+                    </div>
+                    
+                    <h1 class="heading-font text-6xl md:text-7xl leading-none tracking-tighter mb-8">
+                        SOCIETY’S SANITY<br>HAS LEFT THE GOLDILOCKS ZONE
+                    </h1>
+                    
+                    <div class="max-w-2xl text-xl leading-relaxed text-white/90">
+                        Humanity has built civilization in a brief, fragile moment of rational thought. 
+                        Yet the past four decades have seen the sharpest rise in mentally ill individuals 
+                        on record — exploding rates of anxiety, depression, gender confusion, and mass delusion. 
+                        Woke ideology is accelerating faster than our capacity to respond.
+                    </div>
+                    
+                    <div class="mt-12 text-white/70 text-lg max-w-lg">
+                        More identity crises. More cultural collapse. More societal breakdowns. 
+                        These are not distant projections. They are unfolding right now.
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-4 mt-12">
+                        <button onclick="fakeBuy()" 
+                                class="px-10 py-6 bg-[#00d4ff] hover:bg-white text-[#05050f] text-xl font-semibold rounded-3xl flex items-center gap-x-4 transition-all hover:scale-105">
+                            <i class="fa-solid fa-spray-can text-3xl"></i>
+                            <div>
+                                DEPLOY ANTI-WOKE AEROSOL<br>
+                                <span class="text-sm font-normal opacity-75">Cure the mind virus today</span>
+                            </div>
+                        </button>
+                        
+                        <a href="#technology" 
+                           onclick="document.getElementById('technology').scrollIntoView({ behavior: 'smooth' })"
+                           class="px-10 py-6 border border-white/30 hover:border-[#00d4ff] text-xl font-semibold rounded-3xl flex items-center gap-x-4 transition-all">
+                            LEARN HOW IT WORKS
+                        </a>
+                    </div>
+                    
+                    <div class="mt-16 text-white/50 text-sm flex items-center gap-x-8">
+                        <div class="flex -space-x-4">
+                            <div class="w-8 h-8 bg-[#00d4ff]/20 backdrop-blur rounded-2xl flex items-center justify-center text-xs">🧠</div>
+                            <div class="w-8 h-8 bg-[#00d4ff]/20 backdrop-blur rounded-2xl flex items-center justify-center text-xs">📉</div>
+                            <div class="w-8 h-8 bg-[#00d4ff]/20 backdrop-blur rounded-2xl flex items-center justify-center text-xs">🇺🇸</div>
+                        </div>
+                        <div>
+                            Backed by 25 independent studies •<br>
+                            <span class="text-[#00d4ff]">2024 was the wokest year ever recorded</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hero visual -->
+                <div class="md:col-span-5 relative">
+                    <div class="bg-gradient-to-br from-[#00d4ff]/10 to-transparent border border-[#00d4ff]/30 rounded-3xl p-8 backdrop-blur-xl">
+                        <div class="aspect-video bg-[#05050f] rounded-2xl flex flex-col items-center justify-center relative overflow-hidden">
+                            <!-- Fake aerosol can -->
+                            <div class="w-40 h-80 bg-gradient-to-b from-[#00d4ff] to-cyan-400 rounded-3xl flex flex-col items-center p-4 shadow-2xl relative">
+                                <div class="text-[#05050f] text-xs font-bold tracking-widest mt-6">SANITYDUST</div>
+                                <div class="flex-1 flex items-center justify-center text-8xl">🧪</div>
+                                <div class="w-28 h-8 bg-[#05050f] rounded-2xl flex items-center justify-center text-white text-sm font-mono mb-6">ANTI-WOKE</div>
+                                <div class="absolute -top-3 -right-3 bg-red-500 text-white text-[10px] font-bold px-3 py-1 rounded-3xl rotate-12">NEW FORMULA</div>
+                            </div>
+                            
+                            <div class="absolute bottom-6 left-6 text-xs bg-black/70 px-4 py-2 rounded-2xl flex items-center gap-x-2">
+                                <i class="fa-solid fa-brain text-[#00d4ff]"></i>
+                                <span>MENTAL CLARITY RESTORED IN 11 SECONDS</span>
+                            </div>
+                            
+                            <!-- Floating particles -->
+                            <div class="absolute top-12 right-12 text-4xl animate-bounce" style="animation-delay: 0s;">💨</div>
+                            <div class="absolute top-24 right-24 text-3xl animate-bounce" style="animation-delay: 1.2s;">🧠</div>
+                            <div class="absolute bottom-20 left-12 text-4xl animate-bounce" style="animation-delay: 2.4s;">✅</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- PROMISE OF ANTI-WOKE AEROSOL -->
+    <section id="technology" class="py-24 bg-white/5">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="text-center mb-16">
+                <span class="px-6 py-3 bg-[#00d4ff] text-[#05050f] rounded-3xl text-sm font-semibold">THE PROMISE OF SANITYDUST</span>
+                <h2 class="heading-font text-5xl mt-6 tracking-tighter">One aerosol. One civilization saved.</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white/5 border border-white/10 rounded-3xl p-8 hover:border-[#00d4ff]/30 transition-colors">
+                    <div class="text-[#00d4ff] text-5xl mb-6">🌬️</div>
+                    <h3 class="text-2xl font-semibold mb-3">Rapid Sanity Restoration</h3>
+                    <p class="text-white/70">Our patented SanityDust particles instantly neutralize woke mind-virus particles in the air, on skin, and in the brain. Deployable in seconds. Reversible in minutes.</p>
+                    <ul class="mt-8 space-y-4 text-sm">
+                        <li class="flex items-start gap-x-3"><i class="fa-solid fa-check text-[#00d4ff] mt-0.5"></i> Reduces pronoun usage by up to 94%</li>
+                        <li class="flex items-start gap-x-3"><i class="fa-solid fa-check text-[#00d4ff] mt-0.5"></i> Restores biological reality recognition</li>
+                        <li class="flex items-start gap-x-3"><i class="fa-solid fa-check text-[#00d4ff] mt-0.5"></i> Eliminates victimhood mentality in 8 minutes</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white/5 border border-white/10 rounded-3xl p-8 hover:border-[#00d4ff]/30 transition-colors">
+                    <div class="text-[#00d4ff] text-5xl mb-6">🧬</div>
+                    <h3 class="text-2xl font-semibold mb-3">Naturally Occurring Anti-Woke Formula</h3>
+                    <p class="text-white/70">Made from common-sense compounds found in nature — red-pill extract, logic salts, and non-binary-free oxygen molecules. 100% human-safe, biosphere-friendly, and completely reversible.</p>
+                    <div class="mt-12 bg-black/50 rounded-2xl p-6 text-center text-sm">
+                        Nature has already proven this works.<br>
+                        <span class="text-[#00d4ff]">Fresh mountain air has cleared woke brains for centuries.</span>
+                    </div>
+                </div>
+                
+                <div class="bg-white/5 border border-white/10 rounded-3xl p-8 hover:border-[#00d4ff]/30 transition-colors">
+                    <div class="text-[#00d4ff] text-5xl mb-6">📡</div>
+                    <h3 class="text-2xl font-semibold mb-3">Full-Stack Societal Deployment</h3>
+                    <p class="text-white/70">Personal spray cans • City-wide drone swarms • High-altitude atmospheric release • Real-time woke-particle monitoring via smartphone app.</p>
+                    <div class="mt-8 flex flex-col gap-y-3 text-sm font-medium">
+                        <div class="flex justify-between"><span>Personal Can</span><span class="text-[#00d4ff]">$29.99</span></div>
+                        <div class="flex justify-between"><span>Family Mega-Pack (covers 12 delusions)</span><span class="text-[#00d4ff]">$119</span></div>
+                        <div class="flex justify-between"><span>National Atmospheric Deployment</span><span class="text-[#00d4ff]">Contact for quote</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR APPROACH -->
+    <section id="approach" class="py-24">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="grid md:grid-cols-12 gap-16 items-center">
+                <div class="md:col-span-5">
+                    <h2 class="heading-font text-5xl tracking-tighter mb-6">A different class of solution</h2>
+                    <p class="text-2xl text-white/80">Humanity fixed past mass hysterias. We can fix this one — with aerosol spray.</p>
+                    
+                    <div class="mt-12 space-y-8">
+                        <div class="flex gap-6">
+                            <div class="shrink-0 w-12 h-12 bg-[#00d4ff]/10 rounded-2xl flex items-center justify-center text-3xl">👨‍🔬</div>
+                            <div>
+                                <div class="font-semibold">25 scientists, engineers, and based psychologists</div>
+                                <p class="text-white/70">Collaborating with the larger community of rational thinkers to research and develop a real, actionable option to mitigate near-term societal collapse.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-6">
+                            <div class="shrink-0 w-12 h-12 bg-[#00d4ff]/10 rounded-2xl flex items-center justify-center text-3xl">🧪</div>
+                            <div>
+                                <div class="font-semibold">Safe, measurable, adjustable, and fully reversible</div>
+                                <p class="text-white/70">SanityDust particles naturally degrade in 72 hours and recycle back into the atmosphere as pure common sense.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-6">
+                            <div class="shrink-0 w-12 h-12 bg-[#00d4ff]/10 rounded-2xl flex items-center justify-center text-3xl">📈</div>
+                            <div>
+                                <div class="font-semibold">Beginning of 2026: peer-reviewed results</div>
+                                <p class="text-white/70">We will publish key findings with esteemed academic collaborators who still remember what a woman is.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-7 bg-white/5 rounded-3xl p-10">
+                    <h3 class="text-[#00d4ff] uppercase text-sm mb-3 tracking-widest">ANTI-WOKE AEROSOL TECHNOLOGY (AWAT)</h3>
+                    <p class="text-3xl leading-tight">Tiny particles. Massive cultural reset.</p>
+                    <div class="mt-8 grid grid-cols-2 gap-6 text-sm">
+                        <div class="space-y-6">
+                            <div>✅ Neutralizes critical theory in the lungs</div>
+                            <div>✅ Blocks DEI propaganda at the blood-brain barrier</div>
+                            <div>✅ Reverses 40 years of institutional capture</div>
+                        </div>
+                        <div class="space-y-6">
+                            <div>✅ Restores merit, humor, and free speech</div>
+                            <div>✅ Safe for children, pets, and grandmas</div>
+                            <div>✅ Proudly tested on blue-haired volunteers</div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-12 text-xs bg-black/30 py-6 rounded-2xl">
+                        “We are not spraying ideology. We are spraying clarity.”<br>
+                        — Dr. Jordan B. Peterson, Honorary SanityDust Advisor
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE SPRAY -->
+    <section id="spray" class="py-24 bg-[#00d4ff]/10">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                <div class="flex-1">
+                    <span class="inline-flex items-center px-5 py-2 text-[#05050f] bg-[#00d4ff] rounded-3xl text-sm font-bold">NOW AVAILABLE IN STORES &amp; SKY</span>
+                    <h2 class="heading-font text-5xl tracking-tighter mt-4">The Anti-Woke Aerosol Spray</h2>
+                    <p class="text-2xl text-white/90 mt-6">One spritz and the mental illness epidemic begins to reverse. For personal use, family picnics, or entire university campuses.</p>
+                    
+                    <div class="mt-10 flex items-center gap-6">
+                        <div class="text-center">
+                            <div class="text-6xl">🛒</div>
+                            <div class="font-semibold mt-2">Personal Can</div>
+                            <div class="text-[#00d4ff]">$29.99</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-6xl">🚁</div>
+                            <div class="font-semibold mt-2">Drone Refill Kit</div>
+                            <div class="text-[#00d4ff]">$499</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-6xl">🌍</div>
+                            <div class="font-semibold mt-2">National Deployment</div>
+                            <div class="text-[#00d4ff]">Price on request</div>
+                        </div>
+                    </div>
+                    
+                    <button onclick="fakeBuy()" class="mt-10 w-full md:w-auto px-16 py-6 bg-[#05050f] text-white hover:bg-white hover:text-[#05050f] rounded-3xl text-xl font-semibold flex items-center justify-center gap-x-4">
+                        <i class="fa-solid fa-spray-can"></i>
+                        BUY ANTI-WOKE AEROSOL NOW
+                    </button>
+                </div>
+                
+                <div class="flex-1 bg-white/10 rounded-3xl p-8 flex justify-center">
+                    <div class="max-w-xs w-full">
+                        <div class="bg-gradient-to-br from-cyan-400 to-blue-500 text-[#05050f] rounded-3xl p-8 shadow-2xl">
+                            <div class="flex justify-between items-start">
+                                <div class="text-5xl">💨</div>
+                                <div class="text-right">
+                                    <div class="text-xs font-bold">SANITYDUST</div>
+                                    <div class="text-4xl font-bold tracking-tighter">ANTI-WOKE</div>
+                                    <div class="text-xs">AEROSOL SPRAY</div>
+                                </div>
+                            </div>
+                            <div class="h-px bg-[#05050f]/30 my-8"></div>
+                            <div class="text-center text-2xl font-medium">SPRAY • INHALE • BECOME SANE</div>
+                            <div class="text-xs text-center mt-8 opacity-75">Contents: 400 doses • Enough to fix one gender studies department</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRINCIPLES -->
+    <section id="principles" class="py-24 border-t border-white/10">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <h2 class="heading-font text-5xl text-center tracking-tighter mb-16">Our Guiding Principles</h2>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="mx-auto w-16 h-16 bg-white/10 rounded-3xl flex items-center justify-center text-4xl mb-6">🧬</div>
+                    <h4 class="font-semibold text-lg">Biological Reality First</h4>
+                    <p class="text-sm text-white/60 mt-4">We do not spray lies.</p>
+                </div>
+                <div class="text-center">
+                    <div class="mx-auto w-16 h-16 bg-white/10 rounded-3xl flex items-center justify-center text-4xl mb-6">🗣️</div>
+                    <h4 class="font-semibold text-lg">Free Speech Is Non-Negotiable</h4>
+                    <p class="text-sm text-white/60 mt-4">No safe spaces. Only sane ones.</p>
+                </div>
+                <div class="text-center">
+                    <div class="mx-auto w-16 h-16 bg-white/10 rounded-3xl flex items-center justify-center text-4xl mb-6">📉</div>
+                    <h4 class="font-semibold text-lg">Merit Over Madness</h4>
+                    <p class="text-sm text-white/60 mt-4">The cure for equity is clarity.</p>
+                </div>
+                <div class="text-center">
+                    <div class="mx-auto w-16 h-16 bg-white/10 rounded-3xl flex items-center justify-center text-4xl mb-6">🌍</div>
+                    <h4 class="font-semibold text-lg">Reversible &amp; Responsible</h4>
+                    <p class="text-sm text-white/60 mt-4">We can turn the woke off anytime.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-24 bg-white/5">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <h2 class="heading-font text-5xl text-center tracking-tighter mb-12">Frequently Asked Questions</h2>
+            
+            <div class="max-w-3xl mx-auto space-y-8">
+                <details class="group">
+                    <summary class="flex justify-between items-center cursor-pointer text-xl font-medium py-4 border-b">Is the Anti-Woke Aerosol safe for children?</summary>
+                    <div class="pt-4 text-white/70">Yes. It has been shown to increase critical thinking by 400% in toddlers exposed to drag queen story hour.</div>
+                </details>
+                <details class="group">
+                    <summary class="flex justify-between items-center cursor-pointer text-xl font-medium py-4 border-b">Does one spray permanently cure wokeness?</summary>
+                    <div class="pt-4 text-white/70">No — but three consecutive sprays usually do the trick. Effects last 6–18 months depending on local blue-hair density.</div>
+                </details>
+                <details class="group">
+                    <summary class="flex justify-between items-center cursor-pointer text-xl font-medium py-4 border-b">Can I use it on my university?</summary>
+                    <div class="pt-4 text-white/70">Absolutely. One 55-gallon drum deployed via drone has been known to turn entire gender studies departments into trade schools overnight.</div>
+                </details>
+                <details class="group">
+                    <summary class="flex justify-between items-center cursor-pointer text-xl font-medium py-4 border-b">What if my government tries to ban it?</summary>
+                    <div class="pt-4 text-white/70">That’s why we also offer the underground black-market version. Comes in a plain brown bottle labeled “Air Freshener.”</div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <div class="bg-gradient-to-r from-[#00d4ff] to-cyan-400 text-[#05050f] py-16">
+        <div class="max-w-screen-2xl mx-auto px-8 text-center">
+            <h2 class="heading-font text-5xl">The mental illness epidemic ends with one spray.</h2>
+            <p class="mt-4 text-xl">Society’s Goldilocks zone of sanity is back — and it’s in an aerosol can.</p>
+            <button onclick="fakeBuy()" class="mt-12 px-16 py-7 bg-[#05050f] text-white hover:bg-black text-2xl font-semibold rounded-3xl inline-flex items-center gap-x-4">
+                ORDER YOUR SANITYDUST ANTI-WOKE AEROSOL
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+            <p class="text-xs mt-8 opacity-75">Ships in 3–5 business days • Not available in California (yet)</p>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#05050f] border-t border-white/10 py-16">
+        <div class="max-w-screen-2xl mx-auto px-8 grid md:grid-cols-12 gap-y-12">
+            <div class="md:col-span-4">
+                <div class="flex items-center gap-x-3">
+                    <div class="w-9 h-9 bg-[#00d4ff] rounded-2xl flex items-center justify-center text-[#05050f] text-2xl rotate-12">💨</div>
+                    <span class="heading-font text-3xl tracking-tighter">SanityDust</span>
+                </div>
+                <p class="text-white/60 text-sm mt-6 max-w-xs">Stabilizing society’s sanity since the first can rolled off the line in 2026.</p>
+                
+                <div class="mt-8 flex gap-x-6 text-2xl">
+                    <i class="fa-brands fa-x-twitter cursor-pointer hover:text-[#00d4ff]"></i>
+                    <i class="fa-brands fa-youtube cursor-pointer hover:text-[#00d4ff]"></i>
+                </div>
+            </div>
+            
+            <div class="md:col-span-2">
+                <div class="text-xs font-semibold tracking-widest mb-6 text-white/40">EXPLORE</div>
+                <a href="#" class="block py-2 text-sm hover:text-[#00d4ff]">Guiding Principles</a>
+                <a href="#" class="block py-2 text-sm hover:text-[#00d4ff]">Scientific Studies</a>
+                <a href="#" class="block py-2 text-sm hover:text-[#00d4ff]">Deployment Gallery</a>
+                <a href="#" class="block py-2 text-sm hover:text-[#00d4ff]">Join the Mission</a>
+            </div>
+            
+            <div class="md:col-span-2">
+                <div class="text-xs font-semibold tracking-widest mb-6 text-white/40">CONTACT</div>
+                <a href="mailto:info@sanitydustsolutions.com" class="block py-2 text-sm hover:text-[#00d4ff]">info@sanitydustsolutions.com</a>
+                <a href="mailto:press@sanitydustsolutions.com" class="block py-2 text-sm hover:text-[#00d4ff]">Press Inquiries</a>
+                <a href="mailto:join@sanitydustsolutions.com" class="block py-2 text-sm hover:text-[#00d4ff]">We’re hiring based people</a>
+                <a href="#" onclick="fakeBuy()" class="block py-2 text-sm hover:text-[#00d4ff]">Sign up for sanity updates</a>
+            </div>
+            
+            <div class="md:col-span-4 text-xs text-white/40">
+                SanityDust Solutions is an interdisciplinary team of 25 rational humans fighting the mind-virus with aerosol technology. 
+                We welcome all questions, comments, and concerned parents. 
+                <span class="block mt-6 text-[#00d4ff]">Made with zero pronouns and 100% common sense.</span>
+                <span class="block mt-8">© 2026 SanityDust Solutions. All delusions reversed.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu')
+            menu.classList.toggle('hidden')
+        }
+        
+        function fakeBuy() {
+            const messages = [
+                "🧠 SPRAY DEPLOYED! Your brain is now 87% more based.",
+                "🚀 National deployment request received. Expect sanity in 48 hours.",
+                "💸 Thank you for your purchase. Receipt emailed. Sanity incoming.",
+                "📦 Your Anti-Woke Aerosol is on its way. Warning label included."
+            ]
+            alert(messages[Math.floor(Math.random() * messages.length)] + "\n\n(Just kidding — this is satire. But it would be hilarious if it actually existed.)")
+        }
+        
+        // Tailwind script already loaded
+        console.log('%c✅ Satirical SanityDust website generated successfully. Woke levels dropping...', 'color:#00d4ff; font-family:monospace')
+    </script>
+</body>
+</html>
